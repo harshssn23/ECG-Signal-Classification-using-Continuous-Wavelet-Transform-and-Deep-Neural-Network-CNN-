@@ -1,0 +1,2 @@
+# ECG-Signal-Classification-using-Continuous-Wavelet-Transform-and-Deep-Neural-Network-CNN-
+Developing a system capable of accurately classifying electrocardiogram (ECG) signals into three categories: arrhythmia, congestive heart failure (CHF), and normal sinus rhythm (NSR). We aim to enhance healthcare monitoring by automating ECG signal analysis and providing timely interventions when necessary.

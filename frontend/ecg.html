@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Detection</title>
+    <link rel="stylesheet" href="./ecg_files/base.css">
+    <link rel="stylesheet" href="./ecg_files/vendor.css">
+    <link rel="stylesheet" href="./ecg_files/main.css">
+    <link rel="stylesheet" href="./ecg_files/app.css">
+</head>
+<body id="top" class="pace-done" data-aos-easing="ease-in-sine" data-aos-duration="600" data-aos-delay="300">
+    <div class="parallax-mirror" style="visibility: visible; z-index: -100; position: fixed; top: 0px; left: 0px; overflow: hidden; transform: translate3d(0px, 0px, 0px); height: 906px; width: 1519.2px;">
+        <img class="parallax-slider" src="./ecg_files/9.jpg" style="transform: translate3d(0px, 0px, 0px); position: absolute; top: -16px; left: 0px; height: 813px; width: 1519.2px; max-width: none;">
+    </div>
+    <div class="pace  pace-inactive">
+        <div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+            <div class="pace-progress-inner"></div>
+        </div>
+        <div class="pace-activity"></div>
+    </div>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WWGSDB9" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- header -->
+    <header class="s-header">
+        <nav class="header-nav">
+            <div class="mobile-dropdown">
+                <button class="dropdown-button">
+                    <span class="dropdown-icon">☰</span>
+                </button>
+                <ul class="header-nav__list">
+                    <li class="current"><a class="smoothscroll" href="#home">Home</a></li>
+                    <li><a class="smoothscroll" href="#about">About Us</a></li>
+                    <li><a href="index.html">Our Products</a></li>
+                    <li><a class="smoothscroll" href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <script>
+        // JavaScript to toggle the dropdown menu, close on link click, and close on scroll
+        document.addEventListener("DOMContentLoaded", function () {
+            const dropdownButton = document.querySelector(".dropdown-button");
+            const mobileDropdown = document.querySelector(".mobile-dropdown");
+            const dropdownLinks = document.querySelectorAll(".header-nav__list a");
+
+            dropdownButton.addEventListener("click", function () {
+                mobileDropdown.classList.toggle("active");
+            });
+
+            dropdownLinks.forEach(function (link) {
+                link.addEventListener("click", function () {
+                    mobileDropdown.classList.remove("active");
+                });
+            });
+
+            window.addEventListener("scroll", function () {
+                if (mobileDropdown.classList.contains("active")) {
+                    mobileDropdown.classList.remove("active");
+                }
+            });
+        });
+    </script>
+    
+    <!-- home -->
+    <section id="home" class="s-home target-section" data-parallax="scroll" data-image-src="images/9.jpg" data-natural-width="2800" data-natural-height="1500" data-position-y="center">
+        <div class="home-content">
+            <div class="row home-content__main"></div>
+
+            <div class="home-content__scroll">
+                <a href="#about" class="scroll-link smoothscroll">
+                    <span>Scroll Down</span>
+                </a>
+            </div>
+
+            <div class="home-content__line"></div>
+        </div>
+    </section>
+
+    <!-- about -->
+    <section id="about" class="s-about">
+        <div class="row section-header has-bottom-sep aos-init" data-aos="fade-up">
+            <div class="col-full">
+                <h1 class="display-1 display-1--light">About Us</h1>
+            </div>
+        </div>
+
+        <div class="row about-desc aos-init" data-aos="fade-up">
+            <div class="col-full">
+                <p>
+                    Welcome to our heart disease detection system. Our platform enables users to upload ECG signal images for analysis. 
+                    Through advanced technology, images are classified into three key categories: Cardiac Arrhythmia (ARR), Congestive Heart Failure (CHF), or Normal Sinus Rhythm (NSR). 
+                    The application promptly displays the classification result along with relevant messages, providing users with valuable insights. Join us in our mission to revolutionize cardiac health assessment and contribute to healthier communities worldwide.
+                </p>
+            </div>
+        </div>
+
+        <div class="row about-stats stats block-1-3 block-m-1-2 block-mob-full aos-init" data-aos="fade-up">
+            <div class="col-block stats__col">
+                <h3>Cardiac Arrhythmia</h3>
+                <p>Additional monitoring may be required.</p>
+            </div>
+            <div class="col-block stats__col">
+                <h3>Congestive Heart Failure</h3>
+                <p>Consult a healthcare professional.</p>
+            </div>
+            <div class="col-block stats__col">
+                <h3>Normal Sinus Rhythm</h3>
+                <p>No immediate action required.</p>
+            </div>
+        </div>
+
+        <div class="about__line"></div>
+    </section><!-- end s-about -->
+
+    <!-- contact
+    ================================================== -->
+    <section id="contact" class="s-contact">
+
+
+        <div class="row section-header aos-init" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead">Contact Us</h3>
+                <h1 class="display-2 display-2--light">"Stay Connected with us. Your Health is Our priority"</h1>
+            </div>
+        </div>
+
+        <div class="row contact-content aos-init" data-aos="fade-up">
+            
+            <div class="contact-primary">
+
+                <h3 class="h6">Send Us A Message</h3>
+
+                <form id="contactForm" method="post" name="contactForm" novalidate="novalidate"><input type="hidden" name="form-name" value="contactForm">
+                    <fieldset>
+    
+                    <div class="form-field">
+                        <input name="contactName" type="text" id="contactName" placeholder="Your Name" value="" minlength="2" required="" aria-required="true" class="full-width">
+                    </div>
+                    <div class="form-field">
+                        <input name="contactEmail" type="email" id="contactEmail" placeholder="Your Email" value="" required="" aria-required="true" class="full-width">
+                    </div>
+                    <div class="form-field">
+                        <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value="" class="full-width">
+                    </div>
+                    <div class="form-field">
+                        <textarea name="contactMessage" id="contactMessage" placeholder="Your Message" rows="10" cols="50" required="" aria-required="true" class="full-width"></textarea>
+                    </div>
+                        
+                        <div><script src="./ecg_files/api.js.download"></script>
+                          <div class="g-recaptcha" data-sitekey="6LdAvUIUAAAAAHjrjmjtNTcXyKm0WKwefLp-dQv9"><div style="width: 304px; height: 78px;"><div><iframe title="reCAPTCHA" width="304" height="78" role="presentation" name="a-pvz893ctkok9" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="./ecg_files/anchor.html"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;" src="./ecg_files/saved_resource.html"></iframe></div>
+                            <noscript>
+                              <div>
+                                 <div style="width: 302px; height: 422px; position: relative;">
+                                   <div style="width: 302px; height: 422px; position: absolute;">
+                                   <iframe src="https://www.google.com/recaptcha/api/fallback?k=6LdAvUIUAAAAAHjrjmjtNTcXyKm0WKwefLp-dQv9" frameborder="0" scrolling="no"
+                                    style="width: 302px; height:422px; border-style: none;">
+                                   </iframe>
+                                   </div>
+                                 </div>
+                                    <div style="width: 300px; height: 60px; border-style: none; bottom: 12px; left: 25px; margin: 0px; padding: 0px; right: 25px; background: #f9f9f9; border: 1px solid #c1c1c1; border-radius: 3px;">
+                                    <textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response"
+                                    style="width: 250px; height: 40px; border: 1px solid #c1c1c1; margin: 10px 25px; padding: 0px; resize: none;" >
+                                    </textarea>
+                                    </div>
+                            </div>
+                           </noscript>
+                         </div> 
+                        
+                    <div class="form-field">
+                        <button class="full-width btn--primary">Submit</button>
+                        
+                        
+                   <div class="submit-loader"> 
+                            <div class="text-loader">Sending...</div>
+                            <div class="s-loader">
+                                <div class="bounce1"></div>
+                                <div class="bounce2"></div>
+                                <div class="bounce3"></div>
+                            </div>
+                   </div>
+                    </div> 
+    
+                    </fieldset>
+                </form>
+
+             
+                 <div class="message-warning">
+                    Something went wrong. Please try again.
+                </div> 
+            
+                <div class="message-success">
+                    Your message was sent, thank you!<br>
+                </div>
+
+            </div> <!-- end contact-primary -->
+
+            <div class="contact-secondary">
+                <div class="contact-info">
+
+                    <h3 class="h6 hide-on-fullwidth">Contact Info</h3>
+
+                    <div class="cinfo">
+                        <h5>Where to Find Us</h5>
+                        <p>
+                            SSNCE, <br>
+                            Chennai, 603 110
+                        </p>
+                    </div>
+
+                    <div class="cinfo">
+                        <h5>Email Us At</h5>
+                        <p>
+                            helpdesk@ssnecg.com 
+                        </p>
+                    </div>
+
+                    <div class="cinfo">
+                        <h5>Call Us At</h5>
+                        <p>
+                        Whatsapp: (+91) 6006767214
+                        </p>
+                    </div>
+                    <div class="cinfo">
+                        <h5>Legal </h5>
+                        <p>
+                            <a style="color:#4f4f4f" href="https://www.softrateindia.com/privacy-policy.html" target="_blank">Privacy policy</a> <br>
+                        <a style="color:#4f4f4f" href="https://www.softrateindia.com/terms-and-conditions.html" target="_blank">Terms of Service</a>
+                        </p>
+                    </div>
+                     
+                </div> <!-- end contact-info -->
+            </div> <!-- end contact-secondary -->
+        </div> <!-- end contact-content -->
+    </section> <!-- end s-contact -->
+
+
+   
+
+
+    <!-- photoswipe background
+    ================================================== -->
+    <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+
+        <div class="pswp__bg"></div>
+        <div class="pswp__scroll-wrap">
+
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title="Share"></button> <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                            <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button> <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div> <!-- end photoSwipe background -->
+
+
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader" style="display: none;">
+        <div id="loader" style="display: none;">
+            <div class="line-scale-pulse-out">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="./ecg_files/jquery-3.2.1.min.js.download"></script>
+    <script src="./ecg_files/plugins.js.download"></script>
+    <script src="./ecg_files/main.js.download"></script>
+
+
+
+
+<div style="background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px; position: absolute; transition: visibility 0s linear 0.3s, opacity 0.3s linear 0s; opacity: 0; visibility: hidden; z-index: 2000000000; left: 0px; top: -10000px;"><div style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.05;"></div><div class="g-recaptcha-bubble-arrow" style="border: 11px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;"></div><div class="g-recaptcha-bubble-arrow" style="border: 10px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -10px; z-index: 2000000000;"></div><div style="z-index: 2000000000; position: relative;"><iframe title="recaptcha challenge expires in two minutes" name="c-pvz893ctkok9" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="./ecg_files/bframe.html" style="width: 100%; height: 100%;"></iframe></div></div></body></html>

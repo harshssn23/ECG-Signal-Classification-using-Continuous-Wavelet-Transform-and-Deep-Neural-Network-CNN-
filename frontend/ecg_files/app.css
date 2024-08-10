@@ -1,0 +1,372 @@
+*{
+    box-sizing: border-box;
+    font-family:sans-serif
+  }
+  body{
+    margin: 0px;
+    padding:0px;
+    font-family:poppins;
+  }
+  
+  .logo-img{
+    width: 70px;
+    margin: 0px 10px;
+  }
+  .navbar{
+    width: 100%;
+    background-color: white;
+    box-shadow: 5px 10px 30px rgb(121 69 69 / 20%);
+    z-index: 1;
+    height: 80px;
+  }
+  
+  .intern-image{
+    width: 100%;
+    margin-top: 50px;
+  }
+  .intern-text{
+    height: 400px;
+    margin-top: 40px;
+    text-align: center;
+    padding: 27px;
+    background-color: gainsboro;
+  }
+  .domain{
+    list-style: none;
+  }
+  .domain li{
+    font-weight: 300;
+  }
+  .about h2{
+    text-align: center;
+    color: white;
+    font-weight: 700;
+    font-size: 38px;
+  
+  }
+  .apply-link{
+    text-decoration: none;
+    background-color: #23cdaf;
+    width: 200px;
+    height: 40px;
+    border-radius: 25px;
+    font-weight: bold;
+    color: white;
+    padding: 14px;
+    text-align: inherit;
+  
+  }
+  .about{
+    background-color: #23cdaf;;
+      padding: 40px 0px 0px 0px;
+  }
+  
+  .intern-text h3{
+    margin-left: 20px;
+  }
+  .apply-link{
+    color: white;
+    text-decoration: none;
+  }
+  
+  @media screen and (min-width:1024px){
+    .intern-text{
+      background-color: #23cdaf;
+    }
+    .intern-image-div1
+    {
+      display: none;
+    }
+    .intern-text h1{
+      font-size: 46px;
+      font-weight: 600;
+      color: rgb(46, 43, 43);
+    }
+    .vl {
+      width: 10p;
+      border-left: 10px solid black;
+      height: 62px;
+      right: 573px;
+      text-shadow: 3px 3px;
+      box-shadow: 10px 0px 10px 0 rgb(0 0 0 / 8%), 0 10px 10px 0 rgb(0 0 0 / 19%);
+      top: 65px;
+      position: relative;
+    }
+    .menu{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+  }
+  .contacts{
+    font-size: 18px;
+      font-weight: 600;
+      border-radius: 10px;
+      border: 2px solid #414ad7;
+      padding: 12px 14px;
+      letter-spacing: 1px;
+      background-color: #414ad7;
+      color: white;
+      text-decoration: none
+  }
+  .menu li a
+  {
+    color:black;
+    
+    height: 70px;
+    width: 45px;
+    line-height: 45px;
+    margin: 15px;
+    padding: 15px;
+    text-decoration: none;
+    font-weight:bolder;
+    font-size:18px;
+    letter-spacing: 1px;
+  }
+  .nav-side{
+    padding: 10px;
+    margin-right: 200px;
+  }
+  .logo-img {
+    position: relative;
+    bottom: 10px;
+    margin-left: 30px;
+    width: 70px;
+  }
+  .menu li a:hover{
+      color:#0d6efd;
+  }
+  .intern-image{
+      height: 360px;
+      width: 100%;
+  }
+  .intern-image-div{
+    width: 50%;
+  }
+  .intern-text{
+    background-color: transparent;
+    width: 50%;
+  }
+  .intern{
+    display: inline-flex;
+    display: inline-flex;
+      margin: 20px 116px;
+  }
+  
+  .contacts:hover{
+    color: #414ad7;
+    outline:#414ad7;
+    background-color:transparent;
+  }
+  .contacts1{
+    display:none;
+  }
+    .footer{
+      color: white;
+      padding: 23px;
+      background-color: #212529;
+    }
+    .footer-col .company ul {
+      padding: 0 10px;
+      margin: 0;
+    }
+    .footer-col ul li a, .footer-col ul li {
+      text-transform: capitalize;
+      color: #ffffff;
+      line-height: 35px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 400;
+      color: #bbbbbb;
+      font-family: sans-serif;
+      display: block;
+      transition: all 0.3s ease;
+   }
+   .footer-col h4 span {
+    padding-bottom: 3px;
+    border-bottom: 3px solid #4a47a3;
+  }
+  .rows{
+    display: flex;
+    justify-content: space-around;
+  }
+  .about p{
+    text-align: center;
+    color: white;
+    font-size: 28px;
+    padding: 40px;
+    font-weight: 700px;
+    font-weight: 700;
+  }
+  .footer-col .social-links a {
+    display: inline-block;
+    height: 40px;
+    margin:4px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+  }
+  }
+  
+  @media screen and (max-width:1024px)
+  {
+    .nav-side{
+      display: none;
+    }
+    .intern-text h1{
+      font-size: 36px;
+      font-weight: 600;
+      color:  #ffc107
+  
+    }
+    .about p{
+      text-align: center;
+      color: white;
+      font-size: 20px;
+      padding: 30px;
+      font-weight: 700;
+    }
+    .intern-image-div
+    {
+      display: none;
+    }
+    .contacts1{
+      font-size: 18px;
+      font-weight: 600;
+      border-radius: 10px;
+      border: 2px solid #414ad7;
+      padding: 4px;
+      margin-right: 20px;
+      letter-spacing: 1px;
+      background-color: #414ad7;
+      color: white;
+      text-decoration: none;
+    }
+    .intern-text {
+      height: 400px;
+      margin-top: 0px;
+      text-align: center;
+      padding: 42px 20px 20px 20px;
+      background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhJ9NbLow7198Q9odBcYuKcaQRBBBX4bE2ww&usqp=CAU");
+      background-repeat: no-repeat;
+      background-size: cover;
+     
+    }
+  
+  .intern-text h3 {
+    /* margin-left: 20px; */
+    color: rgb(243, 202, 65);
+    line-height: 30px;
+    font-style: italic;
+    text-align:center;
+    font-weight: 1000;
+    margin-right: 21px;
+    padding: 12px;
+  }
+    .about p{
+      text-align: center;
+      color: white;
+      font-weight: 700;
+    }
+    .contacts{
+      display:none;
+    }
+    .contacts1:hover{
+      color: #414ad7;
+      outline:#414ad7;
+      background-color:transparent;
+    }
+    .footer{
+      color: white;
+      padding: 23px;
+      background-color: #212529;
+    }
+    .footer-col .company ul {
+      padding: 0 10px;
+      margin: 0;
+    }
+    .footer-col .social-links a {
+      display: inline-block;
+      height: 40px;
+      width: 40px;
+      background-color: rgba(255, 255, 255, 0.2);
+      text-align: center;
+      line-height: 40px;
+      margin:4px;
+      border-radius: 50%;
+      color: #ffffff;
+      transition: all 0.5s ease;
+  }
+    .footer-col ul li a, .footer-col ul li {
+      text-transform: capitalize;
+      color: #ffffff;
+      line-height: 35px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 400;
+      color: #bbbbbb;
+      font-family: sans-serif;
+      display: block;
+      transition: all 0.3s ease;
+   }
+   .footer-col h4 span {
+    padding-bottom: 3px;
+    border-bottom: 3px solid #4a47a3;
+  }
+  
+  }
+
+  @media screen and (max-width: 600px){
+.footer-col {
+    width: 100%;
+}
+  }
+@media screen and (max-width: 767px){
+.footer-col {
+    margin-bottom: 30px;
+    padding-left: 10px;
+}}
+.footer-col ul li a img {
+    font-size: 20px;
+    width: 100px;
+}
+@media screen and (max-width: 600px){
+.footer-col div img {
+    width: 60%;
+}
+}
+.copyrights p {
+    color: #010101 !important;
+    font-size: 12px !important;
+    margin:40px;
+}
+.footer-col ul li a, .footer-col ul li {
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+
+.footer-col h4 {
+    font-size: 20px;
+    color: #ffffff;
+    text-transform: capitalize;
+    font-weight: 500;
+    position: relative;
+    border-bottom: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.footer-col .company ul {
+    padding: 0 12px;
+    margin: 0;
+}

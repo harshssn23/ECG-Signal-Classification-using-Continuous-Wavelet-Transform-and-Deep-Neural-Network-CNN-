@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Detection</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <style>
+    /* Your existing CSS */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-image: url('static/h1.jpg');
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #333;
+      position: relative;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 0px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      padding: 30px;
+      max-width: 400px;
+      width: 90%;
+    }
+
+    .upload-form {
+      text-align: center;
+      width: 100%;
+    }
+
+    h2 {
+      margin: 0 0 20px;
+      color: #007bff;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    #image-input {
+      display: none;
+    }
+
+    label {
+      cursor: pointer;
+      font-size: 16px;
+      color: #007bff;
+      margin-bottom: 10px;
+      display: inline-block;
+      transition: color 0.3s;
+    }
+
+    label:hover {
+      color: #0056b3;
+    }
+
+    .upload-icon {
+      margin-bottom: 10px;
+      color: #007bff;
+      transition: color 0.3s;
+    }
+
+    label:hover .upload-icon {
+      color: #0056b3;
+    }
+
+    #upload-button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 12px 24px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+      margin-top: 20px;
+    }
+
+    #upload-button:hover {
+      background-color: #0056b3;
+    }
+
+    #image-preview-container {
+      margin-top: 20px;
+      max-height: 300px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+    }
+
+    #image-preview-container img {
+      max-width: 100%;
+      max-height: 300px;
+      border-radius: 8px;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .spinner {
+      margin-top: 20px;
+      display: none;
+    }
+
+    .spinner i {
+      font-size: 24px;
+      color: #007bff;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* New CSS for logout button */
+    #logout-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: #dc3545;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    #logout-button:hover {
+      background-color: #c82333;
+    }
+  </style>
+</head>
+<body>
+    
+    <!-- Main content -->
+    <!-- <div class="container"><br>
+        <h1>Heart Disease Detection</h1>
+
+        <label for="image-input">
+            <i class="fas fa-cloud-upload-alt fa-3x upload-icon"></i><br><br>
+            <span>Choose an image</span>
+        </label>
+        
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*" class="file-input" id="image-input" onchange="previewImage(event)"><br><br>
+            <div id="image-preview"></div> <br><br>
+            <input type="submit" value="Predict">
+        </form>
+        
+        <div id="prediction" style="color: rgb(253, 252, 252);"></div>
+    </div> -->
+
+    <!-- <button id="logout-button" onclick="logout()">Logout</button> -->
+  <div class="container">
+    <br>
+    <!-- <h2>Heart Disease Detection</h2> -->
+    <div class="upload-form">
+      <h2>Upload Image</h2>
+
+      <label for="image-input">
+        <i class="fas fa-cloud-upload-alt fa-3x upload-icon"></i><br>
+        <span>Choose an image</span>
+      </label>
+
+      <form  action="/predict" method="post" id="image-upload-form" enctype="multipart/form-data">
+        <input type="file" id="image-input" name="file" accept="image/*" onchange="previewImage(event)">
+        <div id="image-preview"></div>
+        <!-- <button type="submit" id="upload-button">Upload</button> -->
+        <input type="submit" id="upload-button" value="Predict">
+      </form>
+      <div id="prediction" style="color: rgb(6, 6, 6);"></div>
+
+
+      <!-- <div id="result"></div>
+      <div class="spinner" id="spinner">
+        <i class="fas fa-spinner"></i>
+      </div> -->
+    </div>
+  </div>
+
+    <!-- JavaScript for prediction display -->
+    <script>
+        function previewImage(event) {
+            var reader = new FileReader();
+            reader.onload = function() {
+                var output = document.getElementById('image-preview');
+                output.innerHTML = '<img id="heart-image" src="' + reader.result + '" alt="Selected Image">';
+                //output.style.border = '2px solid black'; // Set border after image is uploaded
+            }
+            reader.readAsDataURL(event.target.files[0]);
+        }
+        document.querySelector('form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const form = e.target;
+            const formData = new FormData(form);
+            const response = await fetch('/predict', {
+                method: 'POST',
+                body: formData
+            });
+            const data = await response.text(); // Parse response as text
+            document.getElementById('prediction').innerHTML = `<h3>${data}</h3>`; // Use innerHTML to set HTML content
+        });
+
+
+        function logout() {
+      // Add logout functionality here
+      alert('Logged out successfully!');
+      window.location.href = 'templates/ecg.html'; // Adjust the logout URL as needed
+    }
+    </script>
+</body>
+</html>
